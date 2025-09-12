@@ -33,7 +33,7 @@ app.post("/api/shorturl", (req, res) => {
   const hostname = urlParser.parse(original_url).hostname;
 
   if (!hostname) {
-    res.json({
+    return res.json({
       error: "invalid url"
     });
   }
