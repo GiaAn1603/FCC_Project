@@ -73,11 +73,14 @@ app.get("/api/users/:_id/logs",(req, res) => {
 
   let filteredLog = user.log.filter(ex => {
     const exDate = new Date(ex.date);
-    if (from && exDate < new Date(from)) return false;
-    if (to && exDate > new Date(to)) return false;
+
+    if (from && exDate < new Date(from)) 
+      return false;
+    if (to && exDate > new Date(to)) 
+      return false;
+    
     return true;
   });
-
 
   if (limit) {
     filteredLog = filteredLog.slice(0, Number(limit));
