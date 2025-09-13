@@ -33,14 +33,14 @@ app.post("/api/shorturl", (req, res) => {
   const hostname = urlParser.parse(original_url).hostname;
 
   if (!hostname) {
-    return res.json({
+    return res.status(404).json({
       error: "invalid url"
     });
   }
 
   dns.lookup(hostname, (err) => {
     if (err) {
-      return res.json({ error: "invalid url" });
+      return res.status(404).json({ error: "invalid url" });
     }
 
     urls.push({ original_url, short_url: id });

@@ -43,7 +43,7 @@ app.post("/api/users/:_id/exercises", (req, res) => {
   const date = dateParam ? new Date(dateParam) : new Date();
 
   if (!user) {
-    return res.json({ error: "User not found" })
+    return res.status(404).json({ error: "User not found" })
   }
 
   user.log.push({
