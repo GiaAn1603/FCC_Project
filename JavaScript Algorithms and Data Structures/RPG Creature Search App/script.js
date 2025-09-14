@@ -54,7 +54,7 @@ async function showCreature() {
         types.appendChild(document.createTextNode(", "));
       }
     });
-  } catch(error) {
+  } catch (error) {
     console.log(error);
   }
 }
