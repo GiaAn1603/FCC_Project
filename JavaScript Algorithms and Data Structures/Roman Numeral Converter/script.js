@@ -18,7 +18,7 @@ function convertToRoman(num) {
     { value: 9, numeral: "IX" },
     { value: 5, numeral: "V" },
     { value: 4, numeral: "IV" },
-    { value: 1, numeral: "I" }
+    { value: 1, numeral: "I" },
   ];
 
   for (let pos = 0; num > 0; pos++) {

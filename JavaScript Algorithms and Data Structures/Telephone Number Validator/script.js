@@ -15,9 +15,9 @@ checkBtn.addEventListener("click", () => {
     return;
   }
 
-  const resultText = isValidUSPhoneNumber(userInput.value.trim()) 
-  ? `Valid US number: ${userInput.value.trim()}` 
-  : `Invalid US number: ${userInput.value.trim()}`;
+  const resultText = isValidUSPhoneNumber(userInput.value.trim())
+    ? `Valid US number: ${userInput.value.trim()}`
+    : `Invalid US number: ${userInput.value.trim()}`;
 
   results.innerHTML += `<div>${resultText}<div>`;
 });

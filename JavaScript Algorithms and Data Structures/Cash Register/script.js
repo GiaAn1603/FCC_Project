@@ -8,7 +8,7 @@ let cid = [
   ["FIVE", 55],
   ["TEN", 20],
   ["TWENTY", 60],
-  ["ONE HUNDRED", 100]
+  ["ONE HUNDRED", 100],
 ];
 const numberInput = document.querySelector("#cash");
 const purchaseBtn = document.querySelector("#purchase-btn");
@@ -22,7 +22,7 @@ const currencyUnits = {
   FIVE: 500,
   TEN: 1000,
   TWENTY: 2000,
-  ONE_HUNDRED: 10000
+  ONE_HUNDRED: 10000,
 };
 
 function checkCashRegister() {
@@ -52,7 +52,7 @@ function checkCashRegister() {
     for (let i = cid.length - 1; i >= 0; i--) {
       let unit = cid[i][0];
       let amount = cid[i][1];
-      
+
       if (amount > 0) {
         resultStr += ` ${unit}: $${amount.toFixed(2)}`;
       }

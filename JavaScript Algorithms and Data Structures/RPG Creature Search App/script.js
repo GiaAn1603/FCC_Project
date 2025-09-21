@@ -13,17 +13,19 @@ const specialDefense = document.querySelector("#special-defense");
 const speed = document.querySelector("#speed");
 
 function getStatValue(stats, statName) {
-  const result = stats.find(stat => stat.name === statName);
-  
+  const result = stats.find((stat) => stat.name === statName);
+
   return result ? result.base_stat : "N/A";
 }
 
 async function showCreature() {
   const cleanedInput = textInput.value.trim().toLowerCase();
-  
+
   try {
-    const response = await fetch(`https://rpg-creature-api.freecodecamp.rocks/api/creature/${cleanedInput}`);
-    
+    const response = await fetch(
+      `https://rpg-creature-api.freecodecamp.rocks/api/creature/${cleanedInput}`
+    );
+
     if (!response.ok || cleanedInput === "red") {
       alert("Creature not found");
       return;
@@ -35,7 +37,7 @@ async function showCreature() {
     creatureId.textContent = data.id;
     weight.textContent = data.weight;
     height.textContent = data.height;
-    
+
     hp.textContent = getStatValue(data.stats, "hp");
     attack.textContent = getStatValue(data.stats, "attack");
     defense.textContent = getStatValue(data.stats, "defense");
@@ -46,7 +48,7 @@ async function showCreature() {
     types.innerHTML = "";
     data.types.forEach((type, index) => {
       const span = document.createElement("span");
-      
+
       span.textContent = type.name.toUpperCase();
       types.appendChild(span);
 
